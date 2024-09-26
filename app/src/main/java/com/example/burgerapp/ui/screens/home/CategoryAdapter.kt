@@ -11,10 +11,8 @@ import com.example.burgerapp.databinding.CategoryListItemBinding
 
 class CategoryAdapter(private val categories: List<String>, private var activeButtonPosition: Int) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
-    // Функция onClick
     var onItemClick: ((Int) -> Unit)? = null
 
-    // Связывание XML с RecyclerView и логика наполнение данными элемента списка
     inner class ViewHolder(private val itemBinding: CategoryListItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         private val context = itemBinding.root.context
         fun bind(category: String) {
@@ -48,7 +46,6 @@ class CategoryAdapter(private val categories: List<String>, private var activeBu
         }
     }
 
-    // Определение ViewHolder и возврат элемента, который используется для отрисовки в RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding =
             CategoryListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -56,14 +53,12 @@ class CategoryAdapter(private val categories: List<String>, private var activeBu
         return ViewHolder(itemBinding)
     }
 
-    // Получение переданного ViewHolder из onCreateViewHolder и передача данных во внутрь ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(categories[position])
 
         holder.changeActive(position == activeButtonPosition)
     }
 
-    // Определение размера списка
     override fun getItemCount() = categories.size
 
     fun setActiveButton(value: Int) {
@@ -76,7 +71,6 @@ class CategoryAdapter(private val categories: List<String>, private var activeBu
 }
 
 
-// Spacing между элементами списка
 class CategorySpacingHorizontal(private val spaceSize: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect, view: View,

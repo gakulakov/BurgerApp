@@ -26,12 +26,10 @@ class FoodAdapter(): RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
     inner class FoodHolder(private val itemBinding: FoodListItemBinding): RecyclerView.ViewHolder(itemBinding.root) {
         val context: Context = itemBinding.root.context
         fun bind(food: Food) {
-            // Добавление уникального имени для Shared Element Transition
             itemBinding.foodImage.transitionName = "shared_image_${food.id}"
             itemBinding.foodText.transitionName = "shared_text_${food.id}"
             itemBinding.foodItem.setOnClickListener {
                 with(itemBinding) {
-                    // Сам ImageView для обозначения элемента перехода и объект Food для передачи imageRes (пока что только imageRes)
                     onItemClick?.invoke(foodText, foodImage, food)
                 }
 
@@ -74,7 +72,6 @@ class FoodAdapter(): RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
         this.data = foodList.toMutableList()
     }
 
-    // Использование DiffUtil
     fun setNewData(newFoodList: List<Food>) {
         val diffCallback = FoodsCallback(data, newFoodList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -86,9 +83,6 @@ class FoodAdapter(): RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
 
 }
 
-// TODO: Попробовать использовать DiffUtil с созданием внутри RecyclerView.Adapter (с помощью AsyncDiffer ??? )
-
-// DiffUtil для калькуляции изменений в списке внутри RecyclerView
 class FoodsCallback(private val oldList: List<Food>, private val newList: List<Food>): DiffUtil.Callback() {
     override fun getOldListSize() = oldList.size
 

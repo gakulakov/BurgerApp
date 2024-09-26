@@ -27,8 +27,6 @@ class FoodDetailFragment : Fragment() {
         enterTransition = fadeTransition
         exitTransition = fadeTransition
 
-        // TODO: Запомнить!!!
-        //  настройка Shared Element Transition
         sharedElementEnterTransition =
             context?.let { TransitionInflater.from(it).inflateTransition(android.R.transition.move) }
 

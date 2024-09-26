@@ -87,13 +87,8 @@ class HomeFragment : Fragment() {
         foodsRecyclerView.layoutManager = GridLayoutManager(context, 2)
         foodsRecyclerView.adapter = foodAdapter
 
-        // TODO: Запомнить!!!
-        //  Передача position для уникального имени transitionName,
-        //  foodImage для передачи самого transition элемента
-        //  и food для передачи imageRes и дополнительной обработки данных
         foodAdapter.onItemClick = { foodText, foodImage, food ->
             val action = HomeFragmentDirections.actionHomeToFoodDetails(food.imageRes, food)
-            // Передаём ImageView и указываем уникальный name, который потом определяем внутри фрагмента на который мы перешли
             val extras = FragmentNavigatorExtras(
                 foodImage to "shared_image_${food.id}",
                 foodText to "shared_text_${food.id}",
@@ -110,7 +105,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // Воспроизведение Shared Element Transition при закрытии FoodDetailsFragment
         postponeEnterTransition()
         foodsRecyclerView.doOnPreDraw {
             startPostponedEnterTransition()
