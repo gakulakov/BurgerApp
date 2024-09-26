@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/food_details_fragment"
+    tools:context=".ui.screens.home.food_deail.FoodDetailFragment"
+    >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/header"
+        android:name="com.example.burgerapp.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/main_image" />
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="image"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/main_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/rating_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="15dp"
+            android:src="@drawable/star"
+            android:contentDescription="rating"
+            />
+        <TextView
+            android:id="@+id/rating_number"
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            />
+        <TextView
+            android:id="@+id/delivery_time"
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- 26 min"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Description"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_container" />
+
+    <LinearLayout
+        android:id="@+id/additional_options_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/butons_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clipToOutline="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spicy"
+                android:textColor="@color/text_dark" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/spicy_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:value="0.5"
+                android:clipToOutline="false"
+                android:clipToPadding="false"
+                app:labelBehavior="gone"
+                app:thumbColor="@color/red_navigation"
+                app:thumbHeight="14dp"
+                app:thumbStrokeColor="@color/white"
+                app:thumbStrokeWidth="2dp"
+                app:thumbWidth="10dp"
+                app:trackColorActive="@color/red_navigation"
+                app:trackColorInactive="@color/light_grey"
+                app:trackHeight="4dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="Mild"
+                    android:textColor="@color/green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:text="Hot"
+                    android:textColor="@color/red_navigation" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_dark"
+                android:text="Portion" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/remove_portion"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/corner_radius"
+                    android:backgroundTint="@color/red_navigation"
+                    android:contentDescription="minus"
+                    android:src="@drawable/minus" />
+
+                <TextView
+                    android:id="@+id/portions_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_dark"
+                    android:layout_centerInParent="true"
+                    />
+
+                <ImageButton
+                    android:id="@+id/add_portion"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/corner_radius"
+                    android:backgroundTint="@color/red_navigation"
+                    android:contentDescription="plus"
+                    android:src="@drawable/plus" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/butons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="34dp"
+            android:backgroundTint="@color/red_navigation"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="20dp"
+            android:text="$8.24"
+            android:textSize="22sp"
+            app:cornerRadius="20dp"
+            android:layout_marginRight="40dp"
+            />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_add_to_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="34dp"
+            android:backgroundTint="@color/text_dark"
+            android:paddingVertical="24dp"
+            android:text="ADD TO CART"
+            android:textSize="18sp"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
