@@ -8,28 +8,56 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.example.burgerapp.HomeFragment"
+        android:name="com.example.burgerapp.ui.screens.home.HomeFragment"
         android:label="@string/tab_home"
         tools:layout="@layout/fragment_home"
-        />
+        >
+        <action
+            android:id="@+id/action_home_to_food_details"
+            app:destination="@id/food_details"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/food_details"
+        android:name="com.example.burgerapp.ui.screens.home.food_deail.FoodDetailFragment"
+        android:label="Food Details"
+        tools:layout="@layout/fragment_food_detail"
+        >
+        <argument
+            android:name="imageRes"
+            app:argType="integer"
+            />
+        <argument
+            android:name="food"
+            app:argType="com.example.burgerapp.data.Food"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/person"
-        android:name="com.example.burgerapp.PersonFragment"
+        android:name="com.example.burgerapp.ui.screens.person.PersonFragment"
         android:label="@string/tab_person"
         tools:layout="@layout/fragment_person"
         />
 
     <fragment
+        android:id="@+id/cart"
+        android:name="com.example.burgerapp.CartFragment"
+        android:label="@string/tab_person"
+        tools:layout="@layout/fragment_cart"
+        />
+
+    <fragment
         android:id="@+id/chat"
-        android:name="com.example.burgerapp.ChatFragment"
+        android:name="com.example.burgerapp.ui.screens.chat.ChatFragment"
         android:label="@string/tab_chat"
         tools:layout="@layout/fragment_chat"
         />
 
     <fragment
         android:id="@+id/favorites"
-        android:name="com.example.burgerapp.FavoritesFragment"
+        android:name="com.example.burgerapp.ui.screens.favorites.FavoritesFragment"
         android:label="@string/tab_favorites"
         tools:layout="@layout/fragment_favorites"
         />
