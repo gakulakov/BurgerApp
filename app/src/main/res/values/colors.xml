@@ -5,6 +5,7 @@
     <color name="red_navigation">#EF2A39</color>
     <color name="text_dark">#3C2F2F</color>
     <color name="grey">#6A6A6A</color>
+    <color name="grey_placeholder">#808080</color>
     <color name="light_grey">#F3F4F6</color>
     <color name="green">#1CC019</color>
 </resources>

@@ -3,19 +3,16 @@ package com.example.burgerapp.ui.screens.home
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.Rect
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.example.burgerapp.R
 import com.example.burgerapp.data.Food
 import com.example.burgerapp.databinding.FoodListItemBinding
-import kotlinx.coroutines.coroutineScope
 
 
 class FoodAdapter(): RecyclerView.Adapter<FoodAdapter.FoodHolder>() {

@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/food_details"
-        android:name="com.example.burgerapp.ui.screens.home.food_deail.FoodDetailFragment"
+        android:name="com.example.burgerapp.ui.screens.food_deail.FoodDetailFragment"
         android:label="Food Details"
         tools:layout="@layout/fragment_food_detail"
         >
@@ -43,7 +43,7 @@
 
     <fragment
         android:id="@+id/cart"
-        android:name="com.example.burgerapp.CartFragment"
+        android:name="com.example.burgerapp.ui.screens.cart.CartFragment"
         android:label="@string/tab_person"
         tools:layout="@layout/fragment_cart"
         />

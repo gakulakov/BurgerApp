@@ -9,5 +9,6 @@ data class Food(
     val description: String,
     val rating: Float,
     val imageRes: Int,
-    var isFavorite: Boolean = false,
+    val price: Float,
+    var isFavorite: Boolean = false
 ) : Serializable

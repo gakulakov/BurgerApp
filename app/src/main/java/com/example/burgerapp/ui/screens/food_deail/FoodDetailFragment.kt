@@ -1,4 +1,4 @@
-package com.example.burgerapp.ui.screens.home.food_deail
+package com.example.burgerapp.ui.screens.food_deail
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -15,7 +15,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.hamburger
+        imageRes = R.drawable.hamburger,
+        price = 19.99f
     ),
     Food(
         id = 2,
@@ -24,6 +25,7 @@ val MOCK_FOODS = listOf(
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
         imageRes = R.drawable.cheeseburger,
+        price = 9.99f,
         isFavorite = true
     ),
     Food(
@@ -32,7 +34,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 5f,
-        imageRes = R.drawable.chickenburger
+        imageRes = R.drawable.chickenburger,
+        price = 12.99f
     ),
     Food(
         id = 4,
@@ -40,7 +43,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 3f,
-        imageRes = R.drawable.friedburger
+        imageRes = R.drawable.friedburger,
+        price = 18.24f
     ),
     Food(
         id = 5,
@@ -48,7 +52,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.hamburger
+        imageRes = R.drawable.hamburger,
+        price = 18.24f
     ),
     Food(
         id = 6,
@@ -56,7 +61,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.cheeseburger
+        imageRes = R.drawable.cheeseburger,
+        price = 18.24f
     ),
     Food(
         id = 7,
@@ -64,7 +70,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 5f,
-        imageRes = R.drawable.chickenburger
+        imageRes = R.drawable.chickenburger,
+        price = 18.24f
     ),
     Food(
         id = 8,
@@ -72,7 +79,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 3f,
-        imageRes = R.drawable.friedburger
+        imageRes = R.drawable.friedburger,
+        price = 18.24f
     ),
     Food(
         id = 9,
@@ -80,7 +88,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.hamburger
+        imageRes = R.drawable.hamburger,
+        price = 18.24f
     ),
     Food(
         id = 10,
@@ -89,6 +98,7 @@ val MOCK_FOODS = listOf(
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
         imageRes = R.drawable.cheeseburger,
+        price = 18.24f,
         isFavorite = true
     ),
     Food(
@@ -97,7 +107,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 5f,
-        imageRes = R.drawable.chickenburger
+        imageRes = R.drawable.chickenburger,
+        price = 18.24f
     ),
     Food(
         id = 12,
@@ -105,7 +116,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 3f,
-        imageRes = R.drawable.friedburger
+        imageRes = R.drawable.friedburger,
+        price = 18.24f
     ),
     Food(
         id = 13,
@@ -113,7 +125,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.hamburger
+        imageRes = R.drawable.hamburger,
+        price = 18.24f
     ),
     Food(
         id = 14,
@@ -121,7 +134,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 4f,
-        imageRes = R.drawable.cheeseburger
+        imageRes = R.drawable.cheeseburger,
+        price = 18.24f
     ),
     Food(
         id = 15,
@@ -129,7 +143,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 5f,
-        imageRes = R.drawable.chickenburger
+        imageRes = R.drawable.chickenburger,
+        price = 18.24f
     ),
     Food(
         id = 16,
@@ -137,7 +152,8 @@ val MOCK_FOODS = listOf(
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
         rating = 3f,
-        imageRes = R.drawable.friedburger
+        imageRes = R.drawable.friedburger,
+        price = 18.24f
     ),
 )
 

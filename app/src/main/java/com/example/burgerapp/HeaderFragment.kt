@@ -21,15 +21,10 @@ import com.example.burgerapp.databinding.FragmentHeaderBinding
 class HeaderFragment : Fragment() {
     private var binding: FragmentHeaderBinding? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentHeaderBinding.inflate(inflater, container, false)
         val view = binding?.root
 
@@ -65,19 +60,9 @@ class HeaderFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         val mainActivity = activity as AppCompatActivity
         mainActivity.supportActionBar?.hide()
-    }
-
-
-    private fun Int.dpToPx(): Int {
-        return (this * resources.displayMetrics.density).toInt()
     }
 }
