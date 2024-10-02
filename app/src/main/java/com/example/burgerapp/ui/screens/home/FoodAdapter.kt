@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.example.burgerapp.R
-import com.example.burgerapp.data.Food
+import com.example.burgerapp.data.model.Food
 import com.example.burgerapp.databinding.FoodListItemBinding
 
 
@@ -23,8 +23,8 @@ class FoodAdapter(): RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
     inner class FoodHolder(private val itemBinding: FoodListItemBinding): RecyclerView.ViewHolder(itemBinding.root) {
         val context: Context = itemBinding.root.context
         fun bind(food: Food) {
-            itemBinding.foodImage.transitionName = "shared_image_${food.id}"
-            itemBinding.foodText.transitionName = "shared_text_${food.id}"
+            itemBinding.foodImage.transitionName = "shared_image_${food.uuid}"
+            itemBinding.foodText.transitionName = "shared_text_${food.uuid}"
             itemBinding.foodItem.setOnClickListener {
                 with(itemBinding) {
                     onItemClick?.invoke(foodText, foodImage, food)

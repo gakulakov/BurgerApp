@@ -1,7 +1,6 @@
 package com.example.burgerapp.ui.screens.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,10 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.Fade
 import androidx.transition.TransitionInflater
 import com.example.burgerapp.R
-import com.example.burgerapp.data.Food
 import com.example.burgerapp.databinding.FragmentHomeBinding
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -86,8 +82,8 @@ class HomeFragment : Fragment() {
         foodAdapter.onItemClick = { foodText, foodImage, food ->
             val action = HomeFragmentDirections.actionHomeToFoodDetails(food.imageRes, food)
             val extras = FragmentNavigatorExtras(
-                foodImage to "shared_image_${food.id}",
-                foodText to "shared_text_${food.id}",
+                foodImage to "shared_image_${food.uuid}",
+                foodText to "shared_text_${food.uuid}",
             )
             findNavController().navigate(action, extras)
         }

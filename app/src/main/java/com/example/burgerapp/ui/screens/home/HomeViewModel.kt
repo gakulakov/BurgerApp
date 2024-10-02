@@ -2,7 +2,7 @@ package com.example.burgerapp.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import com.example.burgerapp.R
-import com.example.burgerapp.data.Food
+import com.example.burgerapp.data.model.Food
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,150 +10,134 @@ import kotlinx.coroutines.flow.update
 
 val MOCK_FOODS = listOf(
     Food(
-        id = 1,
         name = "Hamburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.hamburger,
-        price = 19.99f
+        price = 19.99
     ),
     Food(
-        id = 2,
         name = "Cheesburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.cheeseburger,
-        price = 9.99f,
+        price = 9.99,
         isFavorite = true
     ),
     Food(
-        id = 3,
         name = "Freshroll",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 5f,
+        rating = 5.0,
         imageRes = R.drawable.chickenburger,
-        price = 12.99f
+        price = 12.99
     ),
     Food(
-        id = 4,
         name = "Frenchdog",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 3f,
+        rating = 3.8,
         imageRes = R.drawable.friedburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 5,
         name = "Hamburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.hamburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 6,
         name = "Cheesburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.cheeseburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 7,
         name = "Freshroll",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 5f,
+        rating = 5.0,
         imageRes = R.drawable.chickenburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 8,
         name = "Frenchdog",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 3f,
+        rating = 3.0,
         imageRes = R.drawable.friedburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 9,
         name = "Hamburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.hamburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 10,
         name = "Cheesburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.cheeseburger,
-        price = 18.24f,
+        price = 18.24,
         isFavorite = true
     ),
     Food(
-        id = 11,
         name = "Freshroll",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 5f,
+        rating = 5.0,
         imageRes = R.drawable.chickenburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 12,
         name = "Frenchdog",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 3f,
+        rating = 3.7,
         imageRes = R.drawable.friedburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 13,
         name = "Hamburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.hamburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 14,
         name = "Cheesburger",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 4f,
+        rating = 4.0,
         imageRes = R.drawable.cheeseburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 15,
         name = "Freshroll",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 5f,
+        rating = 5.0,
         imageRes = R.drawable.chickenburger,
-        price = 18.24f
+        price = 18.24
     ),
     Food(
-        id = 16,
         name = "Frenchdog",
         subtitle = "Just Burger",
         description = "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite. Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce, ripe tomato, and crunchy pickles.",
-        rating = 3f,
+        rating = 3.0,
         imageRes = R.drawable.friedburger,
-        price = 18.24f
+        price = 18.24
     ),
 )
 

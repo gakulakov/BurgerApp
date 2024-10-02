@@ -30,7 +30,7 @@
             />
         <argument
             android:name="food"
-            app:argType="com.example.burgerapp.data.Food"
+            app:argType="com.example.burgerapp.data.model.Food"
             />
     </fragment>
 

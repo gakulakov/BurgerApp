@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -42,6 +43,17 @@ android {
 
 dependencies {
 
+    val room_version = "2.6.1"
+    val lifecycle_version = "2.8.6"
+
+    kapt("androidx.room:room-compiler:$room_version")
+
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // Для поддержки корутин (если используете Flow)
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.0")
     implementation(libs.androidx.core.ktx)
