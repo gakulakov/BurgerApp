@@ -4,10 +4,10 @@ A burger  delivery  app  project.  Practice  working  with  XML  UI  development
 
 # Screenshots
 <div style="display: flex; flex-wrap: wrap;">
-<img style="margin-right: 12px" alt="img.png" src="assets/img.png" width="25%"/>
-<img style="margin-right: 12px" alt="img_1.png" src="assets/img_1.png" width="25%"/>
-<img style="margin-right: 12px" alt="img_2.png" src="assets/img_2.png" width="25%"/>
-<img alt="img_3.png" src="assets/img_3.png" width="25%"/>
+<img style="margin-right: 12px" alt="img.png" src="assets/img.png" width="20%"/>
+<img style="margin-right: 12px" alt="img_1.png" src="assets/img_1.png" width="20%"/>
+<img style="margin-right: 12px" alt="img_2.png" src="assets/img_2.png" width="20%"/>
+<img alt="img_3.png" src="assets/img_3.png" width="20%"/>
 </div>
 
 
