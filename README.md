@@ -3,10 +3,13 @@
 A burger  delivery  app  project.  Practice  working  with  XML  UI  development of android  applications,  Shared  Transition  Animations,  Room  DataBase  and  other  tools.
 
 # Screenshots
-<img alt="img.png" src="assets/img.png" width="240"/>
-<img alt="img_1.png" src="assets/img_1.png" width="240"/>
-<img alt="img_2.png" src="assets/img_2.png" width="240"/>
+<div style="display: flex; flex-wrap: wrap;">
+<img style="margin-right: 12px" alt="img.png" src="assets/img.png" width="240"/>
+<img style="margin-right: 12px" alt="img_1.png" src="assets/img_1.png" width="240"/>
+<img style="margin-right: 12px" alt="img_2.png" src="assets/img_2.png" width="240"/>
 <img alt="img_3.png" src="assets/img_3.png" width="240"/>
+</div>
+
 
 # Files
 You can try the mobile application by downloading:
