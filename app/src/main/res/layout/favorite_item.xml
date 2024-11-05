@@ -62,7 +62,7 @@
             android:layout_marginRight="20dp"
             android:text="$16.48"
             android:textColor="@color/text_dark"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
