@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.burgerapp.data.model.CreditCard
 import com.example.burgerapp.databinding.CheckboxLayoutBinding
 import com.example.burgerapp.databinding.CreditCardItemBinding
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 class CreditCardAdapter : ListAdapter<CreditCard, RecyclerView.ViewHolder>(DiffCallback()) {
     private enum class TYPES_OF_VIEW {
@@ -85,6 +83,9 @@ class CreditCardAdapter : ListAdapter<CreditCard, RecyclerView.ViewHolder>(DiffC
     inner class CheckboxViewHolder(private val itemBinding: CheckboxLayoutBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(isChecked: Boolean) {
             itemBinding.checkbox.isChecked = isChecked
+            itemBinding.checkboxLabel.setOnClickListener {
+                itemBinding.checkbox.isChecked = !itemBinding.checkbox.isChecked
+            }
         }
     }
 }

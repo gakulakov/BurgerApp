@@ -1,18 +1,14 @@
 package com.example.burgerapp.ui.screens.cart
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
+import androidx.core.view.updatePadding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.burgerapp.R
@@ -20,7 +16,6 @@ import com.example.burgerapp.data.database.CartDatabase
 import com.example.burgerapp.data.model.CreditCard
 import com.example.burgerapp.data.repository.CartRepository
 import com.example.burgerapp.databinding.FragmentCartBinding
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -55,6 +50,7 @@ class CartFragment : Fragment() {
         binding = FragmentCartBinding.inflate(inflater, container, false)
         val view = binding?.root
 
+        view?.updatePadding(top = 100)
         return view
     }
 

@@ -15,4 +15,9 @@
     </style>
 
     <style name="Theme.BurgerApp" parent="Base.Theme.BurgerApp" />
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/green</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
 </resources>

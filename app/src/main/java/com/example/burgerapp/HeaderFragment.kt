@@ -1,10 +1,6 @@
 package com.example.burgerapp
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -13,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -25,6 +22,7 @@ class HeaderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentHeaderBinding.inflate(inflater, container, false)
         val view = binding?.root
 
@@ -35,20 +33,24 @@ class HeaderFragment : Fragment() {
         mainActivity.setSupportActionBar(toolbar)
         toolbar?.setupWithNavController(findNavController())
         toolbar?.setNavigationIcon(R.drawable.arrow_left)
-
-        navController.addOnDestinationChangedListener { _, _, _ ->
-            mainActivity.supportActionBar?.title = ""
-        }
+        mainActivity.supportActionBar?.title = ""
 
         requireActivity().addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                val isPerson = navController.currentDestination?.label == "Person"
                 menuInflater.inflate(R.menu.appbar_menu, menu)
-            }
 
+                if (isPerson) {
+                    val iconView = menu.findItem(R.id.action_search)
+                    iconView.apply {
+                        setIcon(R.drawable.ic_settings_foreground)
+                    }
+                }
+
+            }
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.action_search -> {
-                        Log.d("MyLog", "Press on Search")
                         true
                     }
 
@@ -62,7 +64,5 @@ class HeaderFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        val mainActivity = activity as AppCompatActivity
-        mainActivity.supportActionBar?.hide()
     }
 }

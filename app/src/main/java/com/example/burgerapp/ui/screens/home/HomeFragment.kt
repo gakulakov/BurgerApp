@@ -1,11 +1,13 @@
 package com.example.burgerapp.ui.screens.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.doOnPreDraw
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -25,7 +27,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -38,6 +40,12 @@ class HomeFragment : Fragment() {
 
         sharedElementEnterTransition =
             context?.let { TransitionInflater.from(it).inflateTransition(android.R.transition.move) }
+
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, statusBarHeight.top, 0, 0)
+            insets
+        }
 
         return view
     }

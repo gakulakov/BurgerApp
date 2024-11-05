@@ -1,23 +1,31 @@
 package com.example.burgerapp.ui.screens.person
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.burgerapp.R
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.example.burgerapp.databinding.FragmentPersonBinding
+
 
 class PersonFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentPersonBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_person, container, false)
-    }
+    ): View {
+        binding = FragmentPersonBinding.inflate(inflater, container, false)
+        val view = binding.root
 
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, statusBarHeight.top, 0, 0)
+            insets
+        }
+
+        return view
+    }
 }

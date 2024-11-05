@@ -3,6 +3,7 @@ package com.example.burgerapp.ui.screens.home
 import androidx.lifecycle.ViewModel
 import com.example.burgerapp.R
 import com.example.burgerapp.data.model.Food
+import com.example.burgerapp.utils.console
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -157,7 +158,8 @@ class HomeViewModel : ViewModel() {
     fun changeFavoriteFood(food: Food, isFavorite: Boolean) {
         _foods.update { currentState ->
             val res = currentState.map { currentFood ->
-                if (currentFood.id == food.id) {
+                if (currentFood == food) {
+                    console.log("here")
                     currentFood.copy(
                         isFavorite = isFavorite
                     )
